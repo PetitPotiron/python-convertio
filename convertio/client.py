@@ -1,20 +1,22 @@
-from os import PathLike
 import base64
+from typing import Any, Optional
 import urllib.request as request
 import json
-import time
 import os.path as path
-from .conversion import *
-from .options import *
+from .conversion import Conversion
+from .options import Options
 import urllib.error as weberror
 
 
 class Client:
-
-    def __init__(self, token) -> None:
+    def __init__(self, token: str) -> None:
         self.token = token
 
-    def convert_by_filename(self, fp: PathLike, output_format: str, output_filename: str = None, options: Options = None):
+    def convert_by_filename(self,
+                            fp: str,
+                            output_format: str,
+                            output_filename: Optional[str] = None,
+                            options: Optional[Options] = None) -> Any:
         """Converts the file found in the path provided.
 
         Args:
@@ -27,7 +29,7 @@ class Client:
         else:
             filename = output_filename
         if options is not None:
-            _options = {
+            _options: Optional[dict[Any, Any]] = {
                 'ocr_enabled': True,
                 'ocr_settings': {
                     'langs': options.langs,
@@ -73,7 +75,7 @@ class Client:
                 raise ValueError(
                     'CONVERTER: The Type of Output File is not supported yet')
 
-    def convert_by_url(self, url: str, output_format: str, options: Options = None):
+    def convert_by_url(self, url: str, output_format: str, options: Optional[Options] = None) -> None:
         """Converts the file found in the given url.
 
         Args:
@@ -81,7 +83,7 @@ class Client:
             output_format (str): The file format you want the file to be converted to
             options (Options, optional): OCR Options Defaults to None.
         """
-        data = {
+        data: dict[Any, Any] = {
             'apikey': self.token,
             'input': 'url',
             'file': url,
@@ -143,7 +145,7 @@ class Client:
             elif e.code == 422:
                 raise ValueError('Input file appears to be corrupted')
 
-    def download(self, id: str, fp: PathLike):
+    def download(self, id: str, fp: str):
         """Writes the file content to a path."""
         r = request.Request(f'https://api.convertio.co/convert/{id}/status')
         try:
@@ -162,7 +164,7 @@ class Client:
                 raise ValueError("The system is unable to find the requested action (the conversion isn't found)")
             elif e.code == 422:
                 raise ValueError('Input file appears to be corrupted')
-        except ValueError as e:
+        except ValueError:
             raise ValueError("The url isn't available yet")
 
     def delete(self, id: str):
@@ -173,7 +175,7 @@ class Client:
         )
         try:
             r = request.urlopen(r)
-            data = json.loads(r.read().decode('utf8'))
+            # data = json.loads(r.read().decode('utf8'))
         except weberror.HTTPError as e:
             if e.code == 404:
                 raise ValueError("File not found")
@@ -182,7 +184,7 @@ class Client:
         """Cancels a conversion"""
         self.delete(id)
 
-    def conversions_list(self, status='all', count=1):
+    def conversions_list(self, status: str = 'all', count: int = 1) -> Any:
         """Gets the list of the client's conversions (count=-1 for all the conversions)."""
         data = {
             'apikey': self.token,
@@ -190,7 +192,7 @@ class Client:
             'count': count
         }
 
-        r = request.Request(url=f'https://api.convertio.co/convert/list',
+        r = request.Request(url='https://api.convertio.co/convert/list',
                             method='POST',
                             data=json.dumps(data).encode('utf8'))
         try:

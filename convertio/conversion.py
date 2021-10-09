@@ -1,5 +1,8 @@
+from typing import Any, Optional
+
+
 class Conversion:
-    def __init__(self, data) -> None:
+    def __init__(self, data: dict[Any, Any]) -> None:
         self.code = data['code']
         self.status = data['status']
         self.id = data['data']['id']
@@ -7,11 +10,11 @@ class Conversion:
         self.step_percent = data['data']['step_percent']
         self.minutes = data['data']['minutes']
         try:
-            self.output_url = data['data']['output']['url']
-            self.output_size = data['data']['output']['size']
-        except:
-            self.output_url = "Url not available yet"
+            self.output_url: str = data['data']['output']['url']
+            self.output_size: Optional[int] = data['data']['output']['size']
+        except Exception:
+            self.output_url: str = "Url not available yet"
             self.output_size = None
-    
+
     def __repr__(self):
         return f'<Response [{self.code}]> {self.status} | {self.step} - {self.step_percent} % \n {self.output_url}'
