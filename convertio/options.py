@@ -1,4 +1,3 @@
-
 def lang_code(language):
     lang_codes = {
         'afrikaans': 'afr',
