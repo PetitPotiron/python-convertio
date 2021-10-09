@@ -1,5 +1,5 @@
 # convertio
-An API wrapper for convertio.co. Before starting, make sure [you've got an API key](https://developers.convertio.co/user/registration/api?utm_source=api_top_btn). The full API reference can be found on [convertio.co/api/docs/](https://convertio.co/api/docs), but I'll make a documentation for this package soon.
+An API wrapper for convertio.co. Before starting, make sure [you've got an API key](https://developers.convertio.co/user/registration/api?utm_source=api_top_btn). The full API reference can be found on [convertio.co/api/docs](https://convertio.co/api/docs), but I'll make a documentation for this package soon.
 
 ## Get started
 - Sign-up to [developers.convertio.co](https://developers.convertio.co/user/registration/api?utm_source=api_top_btn).
