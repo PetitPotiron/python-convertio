@@ -15,6 +15,3 @@ class Conversion:
     
     def __repr__(self):
         return f'<Response [{self.code}]> {self.status} | {self.step} - {self.step_percent} % \n {self.output_url}'
-
-    
-    
