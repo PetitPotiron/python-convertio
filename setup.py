@@ -11,5 +11,5 @@ setup(name="convertio",
       author="PetitPotiron",
       packages=["convertio"],
       license="GNU General Public License v3.0",
-      url='https:/github.com/PetitPotiron/python-convertio/'
+      url='https://github.com/PetitPotiron/python-convertio/'
       )
