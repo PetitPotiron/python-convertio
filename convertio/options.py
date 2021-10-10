@@ -1,4 +1,7 @@
-def lang_code(language):
+from typing import Optional
+
+
+def lang_code(language: str) -> str:
     lang_codes = {
         'afrikaans': 'afr',
         'albanian': 'sqi',
@@ -89,8 +92,8 @@ class Lang:
 
 
 class Options:
-    def __init__(self, langs: list, page_nums: str = None) -> None:
-        self.langs = []
+    def __init__(self, langs: list[Lang], page_nums: Optional[str] = None) -> None:
+        self.langs: list[str] = []
         for lang in langs:
             self.langs.append(lang.code)
         self.page_nums = page_nums
