@@ -1,6 +1,6 @@
 # convertio
 [![Convertio version on pypi](https://img.shields.io/pypi/v/convertio.svg)](https://pypi.org/project/convertio)
-[![Discord support server](https://discord.com/api/guilds/831480772455038996/embed.png)](https://discord.gg/t2dxrXMKya)
+[![Discord support server](https://discord.com/api/guilds/800032961525317693/embed.png)](https://discord.gg/t2dxrXMKya)
 
 An API wrapper for convertio.co. Before starting, make sure [you've got an API key](https://developers.convertio.co/user/registration/api?utm_source=api_top_btn). The full API reference can be found on [convertio.co/api/docs](https://convertio.co/api/docs), but I'll make a documentation for this package soon.
 
