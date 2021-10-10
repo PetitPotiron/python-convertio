@@ -24,7 +24,7 @@ client.delete(id)
 
 ## Notes
 
-Version `1.0.0`
+Version `1.1.0`
 
 This module is neither created nor managed by convertio.co. It represents services faithful to the API and documentation from their website. This API is not unofficial, and it can be payable if you exceed a certain usage. Notice that you must respect convertio.co's [terms of use](https://convertio.co/terms).
 
@@ -39,4 +39,4 @@ This module is neither created nor managed by convertio.co. It represents servic
 - [CLI for convertio.co, by themselves](https://developers.convertio.co/cli)
 
 ### Changelog
-- Initial commit
+- [Add some type to the project](https://github.com/PetitPotiron/python-convertio/pull/3)
