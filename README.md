@@ -6,7 +6,7 @@ An API wrapper for convertio.co. Before starting, make sure [you've got an API k
 ## Get started
 - Sign-up to [developers.convertio.co](https://developers.convertio.co/user/registration/api?utm_source=api_top_btn).
 - Get your free API key from [the homepage](https://developers.convertio.co)
-- Install this module : run `python -m pip install convertio -U` for Windows or `python3 -m pip install convertio -U` for Linux and Macos. you can also download it from github `pip install git+https://github.com/PetitPotiron/python-convertio.git`
+- Install this module : run `python -m pip install convertio -U` for Windows or `python3 -m pip install convertio -U` for Linux and Macos. You can also download it from github `pip install git+https://github.com/PetitPotiron/python-convertio.git`
 
 ## Quick start
 ```python
