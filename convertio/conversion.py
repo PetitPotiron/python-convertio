@@ -1,8 +1,10 @@
-from typing import Any, Optional
+from typing import Optional
+
+from convertio.types import ConversionStatusResult
 
 
 class Conversion:
-    def __init__(self, data: dict[Any, Any]) -> None:
+    def __init__(self, data: ConversionStatusResult) -> None:
         self.code = data['code']
         self.status = data['status']
         self.id = data['data']['id']
