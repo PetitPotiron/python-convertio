@@ -31,6 +31,7 @@ This module is neither created nor managed by convertio.co. It represents servic
 ### Links
 - [Get an API key](https://developers.convertio.co/user/registration/api?utm_source=api_top_btn)
 - [API pricing](https://developers.convertio.co/api/pricing)
+- [API reference](https://developers.convertio.co/api/docs)
 - [OCR (options) pricing](https://developers.convertio.co/ocr/pricing)
 - [Conversion types](https://convertio.co/formats)
 - [GitHub](https:/github.com/PetitPotiron/python-convertio)
