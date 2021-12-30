@@ -43,7 +43,7 @@ class Client:
         else:
             _options = None
 
-        with open(fp, 'r') as file:
+        with open(fp, 'r', encoding='utf-8') as file:
             data: ConversionPostDict = {
                 'apikey': self.token,
                 'input': 'base64',
