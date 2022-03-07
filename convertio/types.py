@@ -1,4 +1,4 @@
-from typing import Any, Optional, TypedDict
+from typing import Any, List, Dict, Optional, TypedDict
 
 
 class ConversionPostResult(TypedDict):
@@ -27,7 +27,7 @@ class ConversionPostDictOptions(TypedDict):
 
 
 class ConversionPostDictOptionsOcrSettings(TypedDict, total=False):
-    langs: list[str]
+    langs: List[str]
     page_nums: Optional[str]
 
 
@@ -48,4 +48,4 @@ class ConversionStatusResultData(TypedDict):
 class ConversionStatusResultDataOutPut(TypedDict):
     url: str
     size: int
-    files: dict[Any, Any]
+    files: Dict[Any, Any]
