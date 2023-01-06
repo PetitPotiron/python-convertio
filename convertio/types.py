@@ -1,4 +1,4 @@
-from typing import Any, List, Dict, Optional, TypedDict
+from typing import Any, List, Dict, Optional, TypedDict, Union
 
 
 class ConversionPostResult(TypedDict):
@@ -15,7 +15,7 @@ class ConversionPostResultDictData(TypedDict):
 class ConversionPostDict(TypedDict, total=False):
     apikey: str
     input: str
-    file: str
+    file: Union[str, bytes]
     filename: Optional[str]
     outputformat: str
     options: Optional['ConversionPostDictOptions']
