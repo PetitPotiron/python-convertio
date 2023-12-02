@@ -47,7 +47,7 @@ class Client:
             data: ConversionPostDict = {
                 'apikey': self.token,
                 'input': 'base64',
-                'file': base64.b64decode(base64.b64encode(file.read())),
+                'file': base64.b64encode(file.read()).decode(),
                 'filename': filename,
                 'outputformat': output_format,
                 'options': _options
