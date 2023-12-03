@@ -25,7 +25,7 @@ client.delete(conversion_id)
 
 ## Notes
 
-Version `1.1.2`
+Version `1.2.0`
 
 This module is neither created nor managed by convertio.co. It represents services faithful to the API and documentation from their website. This API is not unofficial, and it can be payable if you exceed a certain usage. Notice that you must respect convertio.co's [terms of use](https://convertio.co/terms).
 
@@ -40,4 +40,5 @@ This module is neither created nor managed by convertio.co. It represents servic
 - [CLI for convertio.co, by themselves](https://developers.convertio.co/cli)
 
 ### Changelog
+- Fixed error when trying to upload a file of a different format than .txt. It used to be impossible. Added usage example
 - [Fix issue #1 (typing does not work on 3.8 and lower)](https://github.com/PetitPotiron/python-convertio/commit/3faddfac11d2d0e055c5b181041fd9d0587c3f46)
