@@ -43,12 +43,12 @@ class Client:
         else:
             _options = None
 
-        with open(fp, 'r', encoding='utf-8') as file:
+        with open(fp, 'rb') as file:
             data: ConversionPostDict = {
                 'apikey': self.token,
                 'input': 'base64',
-                'file': base64.b64encode(file.read().encode('utf8')).decode('utf8'),
-                'filename':  filename,
+                'file': base64.b64encode(file.read()).decode(),
+                'filename': filename,
                 'outputformat': output_format,
                 'options': _options
             }
@@ -64,7 +64,8 @@ class Client:
 
         r = request.Request(
             url='https://api.convertio.co/convert',
-            data=json.dumps(data).encode("utf8"),
+            data=json.dumps({k: base64.b64encode(v).decode('utf-8') if isinstance(v, bytes) else v for k, v in
+                             data.items()}).encode("utf8"),
             method='POST',
         )
         r.add_header('Content-Type', 'application/json')
@@ -98,8 +99,8 @@ class Client:
             'options': {
                 'ocr_enabled': True if options else False,
                 'ocr_settings': {
-                     'langs': options.langs,
-                     'page_nums': options.page_nums
+                    'langs': options.langs,
+                    'page_nums': options.page_nums
                 },
             } if options else None
         }
